@@ -1,12 +1,38 @@
 {
-  "name": "vue-date",
+  "name": "vue-persian-datepicker",
   "version": "0.1.0",
-  "private": true,
+  "description": "Simple Persian Vue Datepicker",
+  "author": {
+    "name": "Ali Hosseini(alidanial7)",
+    "email": "seyedalihosseinid@gmail.com"
+  },
+  "repository": "https://github.com/alidanial7/persian-vue-datepicker",
+  "bugs": "https://github.com/alidanial7/persian-vue-datepicker/issues",
+  "keywords": [
+    "vuejs",
+    "persian",
+    "datepicker",
+    "vue datepicker",
+    "persian datepicker",
+    "jalali",
+    "jalali datepicker",
+    "shamsi",
+    "shamsi datepicker",
+    "vue persian datepicker"
+  ],
+  "license": "MIT",
+  "private": false,
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build:npm": "vue-cli-service build --target lib --name Datepicker src/Datepicker.vue"
   },
+  "main": "dist/Datepicker.umd.js",
+  "unpkg": "dist/Datepicker.umd.min.js",
   "dependencies": {
     "core-js": "^3.6.5",
     "jalali-date": "^1.1.0",

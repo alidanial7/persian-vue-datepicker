@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
-    <Picker />
+    <Datepicker />
   </div>
 </template>
 
 <script>
-import Picker from "./components/Picker.vue";
+import Datepicker from "./Datepicker.vue";
 
 export default {
   name: "App",
   components: {
-    Picker,
+    Datepicker,
   },
 };
 </script>
