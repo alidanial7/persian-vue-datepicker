@@ -7,7 +7,6 @@
         @keyup="keyPressed"
         @focus="show = true"
         maxlength="10"
-        @blur="show = false"
       />
       <div id="spvd-picker" v-if="show">
         <div id="spvd-header">
@@ -50,6 +49,7 @@
 
 <script>
 import JDate from "jalali-date";
+
 export default {
   name: "Picker",
   props: {
