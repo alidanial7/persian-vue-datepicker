@@ -1,24 +1,54 @@
-# vue-date
+# Simple persian vue datepicker
 
-## Project setup
-```
-npm install
-```
+> A vue plugin to select jalali (persian) date
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Installation
 
-### Compiles and minifies for production
+### npm
+
 ```
-npm run build
+npm i simple-persian-vue-datepicker
 ```
 
-### Lints and fixes files
-```
-npm run lint
+## Usage
+
+### globally
+
+#### main.js
+
+```javascript
+//...
+import Picker from "simple-persian-vue-datepicker";
+Vue.component("Picker", Picker);
+//...
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### in components
+
+#### component.vue
+
+```javascript
+<template>
+    <div>
+        <Picker v-model="date" />
+    </div>
+</template>
+
+<script>
+    import Picker from 'simple-persian-vue-datepicker'
+    export default {
+        data(){
+            return {
+                date: ''
+            }
+        },
+        components: {
+            Picker: Picker
+        }
+    }
+</script>
+```
+
+## License
+
+**This project is licensed under the MIT License**

@@ -1,15 +1,15 @@
 <template>
   <div>
-    <div id="main">
+    <div style="direction:rtl">
       <input
-        id="input"
+        id="spvd-input"
         v-model="selectedInInput"
         @keyup="keyPressed"
         @focus="show = true"
         maxlength="10"
       />
-      <div id="picker" v-if="show">
-        <div id="header">
+      <div id="spvd-picker" v-if="show">
+        <div id="spvd-header">
           <button @click="previousMonth">-</button>
 
           {{
@@ -17,25 +17,24 @@
           }}
           <button @click="nextMonth">+</button>
         </div>
-        <hr />
-        <div id="body">
-          <div id="dayNames">
-            <div class="dayName">ش</div>
-            <div class="dayName">1ش</div>
-            <div class="dayName">2ش</div>
-            <div class="dayName">3ش</div>
-            <div class="dayName">4ش</div>
-            <div class="dayName">5ش</div>
-            <div class="dayName">ج</div>
+        <div id="spvd-body">
+          <div id="spvd-dayNames">
+            <div class="spvd-dayName">ش</div>
+            <div class="spvd-dayName">1ش</div>
+            <div class="spvd-dayName">2ش</div>
+            <div class="spvd-dayName">3ش</div>
+            <div class="spvd-dayName">4ش</div>
+            <div class="spvd-dayName">5ش</div>
+            <div class="spvd-dayName">ج</div>
           </div>
           <div
-            class="day-void"
+            class="spvd-day-void"
             v-for="i in firstDayOfMonth"
             :key="`day-void ${i}`"
           ></div>
           <div
-            class="day"
-            :class="i === selected.day ? 'active' : ''"
+            class="spvd-day"
+            :class="i === selected.day ? 'spvd-active' : ''"
             v-for="i in howManyDaysInCurrentMonth"
             :key="`day ${i}`"
             @click="mouseClickOnCalender(i)"
@@ -63,7 +62,6 @@ export default {
       firstDayOfMonth: 0,
       selectedInInput: "",
       howManyDaysInCurrentMonth: 0,
-
       monthNames: [
         "فروردین",
         "اردیبهشت",
@@ -247,7 +245,7 @@ export default {
           this.yearMinus();
           this.clearLastChar();
           break;
-        case "Enter":
+        case " ":
           this.addNumberToInput();
           break;
         default:
@@ -340,57 +338,76 @@ export default {
 };
 </script>
 <style scoped>
-* {
-  direction: rtl;
-}
-#main {
-  width: 80%;
-}
-#input {
+#spvd-input {
   width: 100%;
 }
-#picker {
+#spvd-header {
+  display: flex;
+  justify-content: space-around;
+  height: 40px;
+  align-items: center;
+}
+#spvd-header > button {
+  padding: 0;
+  margin: 0;
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+}
+
+#spvd-picker {
   border: 1px solid gray;
   width: 350px;
+  margin: 0;
+  padding: 0;
+  z-index: 20;
+  background: white;
+  position: absolute;
 }
-#body {
+#spvd-body {
   display: flex;
   flex-wrap: wrap;
 }
-
-#dayNames {
+#spvd-dayNames {
   display: flex;
   flex-wrap: wrap;
   background: gray;
   color: white;
+  width: 100%;
 }
-.day {
-  width: 50px;
+.spvd-day {
+  width: 49px;
   height: 45px;
   justify-content: center;
   align-items: center;
   display: flex;
   cursor: pointer;
   border-radius: 5px;
+  margin: 0;
+  padding: 0;
 }
-.day-void {
-  width: 50px;
+.spvd-day-void {
+  width: 49px;
   height: 45px;
   justify-content: center;
   align-items: center;
   display: flex;
+  margin: 0;
+  padding: 0;
 }
-.dayName {
-  width: 50px;
+.spvd-dayName {
+  width: 49px;
   height: 45px;
   justify-content: center;
   align-items: center;
   display: flex;
+  margin: 0;
+  padding: 0;
 }
-.day:hover {
+.spvd-day:hover {
   background: blue;
 }
-.active {
+.spvd-active {
   background: red;
 }
 </style>
