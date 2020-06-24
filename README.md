@@ -19,6 +19,8 @@ npm i simple-persian-vue-datepicker
 ```javascript
 //...
 import Picker from "simple-persian-vue-datepicker";
+import "simple-persian-vue-datepicker/dist/simple-persian-vue-datepicker.css";
+
 Vue.component("Picker", Picker);
 //...
 ```
@@ -36,6 +38,8 @@ Vue.component("Picker", Picker);
 
 <script>
     import Picker from 'simple-persian-vue-datepicker'
+    import "simple-persian-vue-datepicker/dist/simple-persian-vue-datepicker.css";
+
     export default {
         data(){
             return {
