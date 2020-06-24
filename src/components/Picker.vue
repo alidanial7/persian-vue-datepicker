@@ -2,11 +2,12 @@
   <div>
     <div style="direction:rtl">
       <input
-        id="spvd-input"
         v-model="selectedInInput"
+        id="spvd-input"
         @keyup="keyPressed"
         @focus="show = true"
         maxlength="10"
+        @blur="show = false"
       />
       <div id="spvd-picker" v-if="show">
         <div id="spvd-header">
@@ -51,6 +52,20 @@
 import JDate from "jalali-date";
 export default {
   name: "Picker",
+  props: {
+    value: {
+      type: String,
+      required: true,
+    },
+  },
+  watch: {
+    value() {
+      this.$emit("input", this.value);
+    },
+    selectedInInput(newVal) {
+      this.updateValue(newVal);
+    },
+  },
   data() {
     return {
       show: false,
@@ -248,6 +263,8 @@ export default {
         case " ":
           this.addNumberToInput();
           break;
+        case "Enter":
+          break;
         default:
           this.calFocused(event.key);
           break;
@@ -333,6 +350,9 @@ export default {
     },
     clearInput() {
       this.selectedInInput = "";
+    },
+    updateValue(value) {
+      this.$emit("input", value);
     },
   },
 };
