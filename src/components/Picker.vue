@@ -7,6 +7,7 @@
         @keyup="keyPressed"
         @focus="show = true"
         maxlength="10"
+        autocomplete="off"
       />
       <div id="spvd-picker" v-if="show">
         <div id="spvd-header">
