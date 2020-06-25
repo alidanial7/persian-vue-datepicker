@@ -8,6 +8,7 @@
         @focus="show = true"
         maxlength="10"
         autocomplete="off"
+        :style="inputStyle"
       />
       <div id="spvd-picker" v-if="show">
         <div id="spvd-header">
@@ -57,6 +58,10 @@ export default {
     value: {
       type: String,
       required: true,
+    },
+    inputStyle: {
+      type: String,
+      default: null,
     },
   },
   watch: {
