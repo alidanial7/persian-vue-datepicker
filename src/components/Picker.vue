@@ -9,6 +9,7 @@
         maxlength="10"
         autocomplete="off"
         :style="inputStyle"
+        :placeholder="inputPlaceholder"
       />
       <div id="spvd-picker" v-if="show">
         <div id="spvd-header">
@@ -62,6 +63,10 @@ export default {
     inputStyle: {
       type: String,
       default: null,
+    },
+    inputPlaceholder: {
+      type: String,
+      default: "",
     },
   },
   watch: {
