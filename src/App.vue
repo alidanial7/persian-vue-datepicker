@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Datepicker v-model="date" inputPlaceholder="salam" />
+    <Datepicker v-model="date" inputDefault="1399/04/03" />
   </div>
 </template>
 

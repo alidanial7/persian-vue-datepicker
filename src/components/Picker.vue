@@ -68,6 +68,10 @@ export default {
       type: String,
       default: "",
     },
+    inputDefault: {
+      type: String,
+      default: "",
+    },
   },
   watch: {
     value() {
@@ -106,6 +110,26 @@ export default {
   },
   mounted() {
     this.calcStartParams();
+    if (this.inputDefault === "") {
+      const date = new JDate(); // => default to today
+      const now = date.date;
+      this.selected.day = now[2];
+      this.selected.month = now[1];
+      this.selected.year = now[0];
+    } else if (this.inputDefault === "now") {
+      const date = new JDate(); // => default to today
+      const now = date.date;
+      this.selected.day = now[2];
+      this.selected.month = now[1];
+      this.selected.year = now[0];
+      this.addNumberToInput();
+    } else {
+      const date = this.inputDefault.split("/");
+      this.selected.day = date[2];
+      this.selected.month = date[1];
+      this.selected.year = date[0];
+      this.addNumberToInput();
+    }
   },
   methods: {
     calcStartParams() {
