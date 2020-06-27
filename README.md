@@ -92,7 +92,7 @@ you can control selected date by your keyboard the keys are :
 
 ## Props :heavy_plus_sign:
 
-you can pass Your data to input whith thease props:(none of them are requierd)
+you can pass Your data to input whit these props:(none of them are required)
 
 | name             | functionality                                                                |
 | ---------------- | ---------------------------------------------------------------------------- |
