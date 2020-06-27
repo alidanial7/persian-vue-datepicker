@@ -90,32 +90,43 @@ you can control selected date by your keyboard the keys are :
 | d           | minus month      |
 | space       | select date      |
 
-## Props
+## Props :heavy_plus_sign:
 
 you can pass Your data to input whith thease props:(none of them are requierd)
 
-| name             | functionality                                                               |
-| ---------------- | --------------------------------------------------------------------------- |
-| inputPlaceholder | set placeholder for input                                                   |
-| inputDefault     | selected date by default in format `yyyy/mm/dd`(pass `now` to select today) |
-| inputStyle       | style the input `Described below`                                           |
+| name             | functionality                                                                |
+| ---------------- | ---------------------------------------------------------------------------- |
+| inputPlaceholder | set placeholder for input                                                    |
+| inputDefault     | selected date by default in format `yyyy/mm/dd` (pass `now` to select today) |
+| inputStyle       | style the input `Described below`                                            |
 
 ## Style It :paintbrush:
 
+### Pass like props:
+
 you can style component by passing below props to it
 
-### Style elements
+#### Style elements
 
 | Prop name  | Element    |
 | ---------- | ---------- |
 | inputStyle | Main input |
 
-### Example
+#### Example
 
 ```javascript
 <Picker v-model="date" inputStyle="background:red;border:10px solid black;" />
 ```
 
-## License
+### With CSS:
+
+in this mode you can call below css classes to change the style of items:
+
+| class name | Element |
+| ---------- | ------- |
+| spvd-input | input   |
+| spvd-label | input   |
+
+## License :newspaper:
 
 **This project is licensed under the MIT License**
