@@ -1,15 +1,20 @@
 <template>
   <div>
     <div style="direction:rtl">
+      <label :for="id" class="spvd-label" v-if="inputLabel">{{
+        inputLabel
+      }}</label>
+
       <input
         v-model="selectedInInput"
-        id="spvd-input"
+        class="spvd-input"
         @keyup="keyPressed"
         @focus="show = true"
         maxlength="10"
         autocomplete="off"
         :style="inputStyle"
         :placeholder="inputPlaceholder"
+        :id="id"
       />
       <div id="spvd-picker" v-if="show">
         <div id="spvd-header">
@@ -72,6 +77,10 @@ export default {
       type: String,
       default: "",
     },
+    inputLabel: {
+      type: String,
+      default: "",
+    },
   },
   watch: {
     value() {
@@ -83,6 +92,7 @@ export default {
   },
   data() {
     return {
+      id: "",
       show: false,
       selected: {
         day: "",
@@ -109,6 +119,7 @@ export default {
     };
   },
   mounted() {
+    this.id = new Date().getTime();
     this.calcStartParams();
     if (this.inputDefault === "") {
       const date = new JDate(); // => default to today
@@ -393,8 +404,14 @@ export default {
 };
 </script>
 <style scoped>
-#spvd-input {
+.spvd-input {
   width: 100%;
+}
+.spvd-label {
+  text-align: right;
+  direction: rtl;
+  margin-bottom: 5px;
+  display: block;
 }
 #spvd-header {
   display: flex;

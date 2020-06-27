@@ -92,11 +92,13 @@ you can control selected date by your keyboard the keys are :
 
 ## Props
 
+you can pass Your data to input whith thease props:(none of them are requierd)
+
 | name             | functionality                                                               |
 | ---------------- | --------------------------------------------------------------------------- |
 | inputPlaceholder | set placeholder for input                                                   |
-| inputStyle       | style the input `Described below`                                           |
 | inputDefault     | selected date by default in format `yyyy/mm/dd`(pass `now` to select today) |
+| inputStyle       | style the input `Described below`                                           |
 
 ## Style It :paintbrush:
 
